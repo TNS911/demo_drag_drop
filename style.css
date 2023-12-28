@@ -1,0 +1,37 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#field {
+  width: 800px;
+  height: 500px;
+  text-align: center;
+}
+
+.box {
+  width: 130px;
+  height: 128px;
+  z-index: 1000;
+}
+
+.draggable {
+  cursor: pointer;
+}
+
+.wallpaper {
+  width: 900px;
+}
+
+.success{
+  background-color: pink;
+  -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+
+.wallpaper-correct{
+
+}
