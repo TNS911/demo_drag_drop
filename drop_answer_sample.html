@@ -20,11 +20,13 @@
             border: solid 1px;
             border-radius: 50%;
             align-items: center;
-            display: flex;
             margin: auto;
             justify-content: center;
             background: #d7ff00;
-            z-index: 1000;
+        }
+        .box p {
+            padding-top: 10vh;
+            text-align: center;
         }
         .draggable {
             cursor: pointer;
@@ -41,13 +43,15 @@
             justify-content: center;
             margin-right: 15vh;
         }
-        .success{
-            background-color: pink;
-            -webkit-transition: background-color 1000ms linear;
-            -moz-transition: background-color 1000ms linear;
-            -o-transition: background-color 1000ms linear;
-            -ms-transition: background-color 1000ms linear;
-            transition: background-color 1000ms linear;
+        .correct{
+            font-weight: bold;
+        }
+
+        .success_text {
+            padding-bottom: 0.1em;
+            font-size: 30vw;
+            line-height: 0.6;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -60,7 +64,7 @@
         <div class="box draggable">
             <p>CSS</p>
         </div>
-        <div class="box draggable">
+        <div class="box draggable correct">
             <p>Javascript</p>
         </div>
     </div>
@@ -90,7 +94,6 @@
             startDrag(dragElement, event.clientX, event.clientY);
 
             dragElement.style.position = 'absolute';
-            dragElement.style.zIndex = 1000;
             document.body.append(dragElement);
 
             function onMouseUp(event) {
@@ -114,7 +117,9 @@
                     }
                     currentDroppable = dropableTarget;
                     if (currentDroppable) {
+                        if(dragElement.classList.contains('correct')){
                         enterDroppable(currentDroppable);
+                        }
                     }
                 }
             }
@@ -213,11 +218,11 @@
         });
 
         function enterDroppable(elem) {
-            elem.classList.add('success');
+            window.alert('Correct');
         }
 
         function leaveDroppable(elem) {
-            elem.classList.remove('success');
+            elem.style.background = '';
         }
     </script>
 </body>
